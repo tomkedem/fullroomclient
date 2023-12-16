@@ -5,3 +5,5 @@
 # dotnet add package Google.Protobuf
 
 # dotnet add package Grpc.Tools
+
+# dotnet publish -o publish
