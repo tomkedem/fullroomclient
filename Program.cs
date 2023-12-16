@@ -16,7 +16,9 @@ Console.WriteLine($"Joining room {room}...");
 
 try
 {
-    var joinResponse = client.RegisterToRoom(new RoomRegistrationRequest() { RoomName = room, UserName = username }, deadline: DateTime.UtcNow.AddSeconds(5));
+    var headers = new Grpc.Core.Metadata();
+    headers.Add("Authorization", "Bearer gfhgfjhghfghfhghgdgsdhgfgdh=");
+    var joinResponse = client.RegisterToRoom(new RoomRegistrationRequest() { RoomName = room, UserName = username }, deadline: DateTime.UtcNow.AddSeconds(5), headers: headers);
     if (joinResponse.Joined)
     {
         Console.WriteLine("Joined successfully!");
